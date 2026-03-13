@@ -1,0 +1,818 @@
+/* ── RESET & BASE ───────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1b4332;
+  background-color: #ffffff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ── NAVBAR ─────────────────────────────────── */
+.navbar {
+  background-color: #1b4332;
+  padding: 0 32px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.logo-icon {
+  color: #e63946;
+  font-size: 1.5rem;
+}
+
+.navbar__links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.navbar__links a {
+  color: #ffffff;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.navbar__links a:hover {
+  color: #e63946;
+}
+
+.btn-hire {
+  background-color: #e63946;
+  color: #ffffff;
+  padding: 8px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.btn-hire:hover {
+  background-color: #c1121f;
+  transform: translateY(-2px);
+}
+
+/* ── HERO SECTION ───────────────────────────── */
+.hero {
+  min-height: calc(100vh - 64px);
+  background: linear-gradient(135deg, #1b4332, #2d6a4f, #40916c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 32px;
+}
+
+.hero__content {
+  max-width: 640px;
+  text-align: center;
+}
+
+.hero__badge {
+  display: inline-block;
+  background-color: rgba(230, 57, 70, 0.15);
+  color: #e63946;
+  border: 1px solid #e63946;
+  padding: 4px 16px;
+  border-radius: 99px;
+  font-size: 0.85rem;
+  margin-bottom: 24px;
+}
+
+.hero__title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #e63946;
+}
+
+.hero__desc {
+  color: #e9f5ec;
+  font-size: 1.1rem;
+  margin-bottom: 36px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background-color: #e63946;
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #c1121f;
+}
+
+.btn-outline-hero {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  padding: 10px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-outline-hero:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ── ABOUT SECTION ───────────────────────────── */
+.about-section {
+  padding: 80px 0;
+  background-color: #f1faee;
+}
+
+.about__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about__header h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1b4332;
+}
+
+.about__content {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.about__image img {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 3px solid #e63946;
+}
+
+.about__text {
+  max-width: 500px;
+}
+
+.about__text h3,
+.about__skills h4 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: #1b4332;
+}
+
+.about__text p {
+  color: #344e41;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.about__skills {
+  border-top: 1px solid #d8f3dc;
+  padding-top: 30px;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+}
+
+.skill-item {
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  border: 2px solid #2d6a4f;
+  transition: 0.3s;
+}
+
+.skill-item:hover {
+  border-color: #e63946;
+  transform: translateY(-3px);
+}
+
+.skill-item span {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.skill-item p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1b4332;
+}
+
+/* ── PORTFOLIO SECTION ───────────────────────── */
+.portfolio {
+  padding: 96px 32px;
+  text-align: center;
+  background: #2d6a4f;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #000000;
+}
+
+.portfolio-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.portfolio-card {
+  background: #ffffff;
+  width: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-10px);
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.portfolio-card__info {
+  padding: 20px;
+}
+
+.portfolio-card__info p {
+  color: #344e41;
+}
+
+/* ── CONTACT SECTION ─────────────────────────── */
+.contact {
+  padding: 96px 32px;
+  text-align: center;
+  background: #f1faee;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px;
+  border-radius: 8px;
+  border: 2px solid #2d6a4f;
+  background: #ffffff;
+  color: #1b4332;
+  font-family: inherit;
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #e63946;
+}
+
+.contact-form button {
+  padding: 14px;
+  border: none;
+  background: #e63946;
+  color: rgb(0, 0, 0);
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #c1121f;
+}
+
+/* SOCIAL MEDIA */
+.social-links {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #1b4332;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.social-item svg {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+}
+
+.social-item:hover {
+  color: #e63946;
+  transform: translateY(-5px);
+}
+
+/* ── FOOTER ─────────────────────────────────── */
+.footer {
+  background-color: #1b4332;
+  padding: 40px 32px;
+}
+
+.footer__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Tombol dark mode */
+.dark-btn {
+  padding: 8px 16px;
+  border: 2px solid #333;
+  border-radius: 20px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+/* Gaya saat dark mode aktif — diapply ke <body> */
+.dark-mode {
+  background-color: #1a1a2e !important;
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .dark-btn {
+  border-color: #e0e0e0;
+  color: #e0e0e0;
+}
+
+/* Transisi halus untuk semua elemen saat mode berubah */
+* {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.counter-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.counter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin: 24px 0;
+}
+
+#angka-counter {
+  font-size: 72px;
+  font-weight: bold;
+  color: #2e74b5;
+  min-width: 100px;
+}
+
+.counter-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid #2e74b5;
+  background: white;
+  font-size: 28px;
+  cursor: pointer;
+  color: #2e74b5;
+}
+
+.counter-btn:hover {
+  background: #2e74b5;
+  color: white;
+}
+
+.form-section {
+  padding: 60px 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.form-container input,
+.form-container textarea {
+  padding: 12px 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+}
+.form-container input:focus,
+.form-container textarea:focus {
+  outline: none;
+  border-color: #2e74b5;
+}
+#btn-kirim {
+  padding: 14px;
+  background: #2e74b5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+#btn-kirim:hover {
+  background: #1f4e79;
+}
+.feedback {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+.feedback.error {
+  background: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+.feedback.success {
+  background: #dcfce7;
+  color: #16a34a;
+  border: 1px solid #bbf7d0;
+}
+.hidden {
+  display: none;
+}
+
+/* ── DARK MODE BUTTON ───────────────── */
+.dark-btn {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: none;
+  background: #ffffff;
+  color: #111;
+  font-weight: 600;
+  cursor: pointer;
+}
+/* ===================================================
+  DARK MODE (VERSI LEBIH PROFESIONAL)
+=================================================== */
+
+body.dark-mode {
+  background-color: #0f172a;
+  color: #e5e7eb;
+}
+
+/* Navbar */
+body.dark-mode .navbar {
+  background-color: #020617;
+}
+
+/* Hero */
+body.dark-mode .hero {
+  background: linear-gradient(135deg, #020617, #0f172a, #1e293b);
+}
+
+/* About */
+body.dark-mode .about-section {
+  background-color: #0f172a;
+}
+
+body.dark-mode .about__text p {
+  color: #cbd5f5;
+}
+
+/* Skills */
+body.dark-mode .skill-item {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e5e7eb;
+}
+
+/* Portfolio */
+body.dark-mode .portfolio {
+  background: #020617;
+}
+
+body.dark-mode .portfolio-card {
+  background: #1e293b;
+  color: #e5e7eb;
+}
+
+/* Contact */
+body.dark-mode .contact {
+  background: #0f172a;
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+  background: #1e293b;
+  border-color: #334155;
+  color: #ffffff;
+}
+
+/* Social */
+body.dark-mode .social-item {
+  color: #e5e7eb;
+}
+
+/* Footer */
+body.dark-mode .footer {
+  background: #020617;
+}
+
+/* Section Title */
+body.dark-mode .section-title {
+  color: #ffffff;
+}
+
+/* Button */
+body.dark-mode .btn-primary {
+  background: #ef4444;
+}
+
+body.dark-mode .btn-primary:hover {
+  background: #dc2626;
+}
+
+/* =================================
+  PERBAIKAN WARNA TEKS DARK MODE
+================================= */
+
+/* Semua teks default */
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode li,
+body.dark-mode label {
+  color: #e5e7eb;
+}
+
+/* Link */
+body.dark-mode a {
+  color: #f8fafc;
+}
+
+/* Hover link */
+body.dark-mode a:hover {
+  color: #ef4444;
+}
+
+/* Judul */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #ffffff;
+}
+
+/* Deskripsi hero */
+body.dark-mode .hero__desc {
+  color: #cbd5f5;
+}
+
+/* Teks portfolio */
+body.dark-mode .portfolio-card__info p {
+  color: #cbd5f5;
+}
+
+/* Placeholder form */
+body.dark-mode ::placeholder {
+  color: #94a3b8;
+}
+
+/* Icon social */
+body.dark-mode .social-item i {
+  color: #e5e7eb;
+}
+
+/* Skill text */
+body.dark-mode .skill-item {
+  color: #ffffff;
+}
+
+/* =================================
+  SMOOTH TRANSITION MODE
+================================= */
+
+body,
+.navbar,
+.hero,
+.about-section,
+.portfolio,
+.contact,
+.footer,
+.portfolio-card,
+.skill-item,
+.contact-form input,
+.contact-form textarea,
+.section-title,
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+li,
+button {
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* =========================================
+  PROFESSIONAL DARK MODE COLOR SYSTEM
+========================================= */
+
+body.dark-mode {
+  background-color: #0b1220;
+  color: #e6edf3;
+}
+
+/* Navbar */
+body.dark-mode .navbar {
+  background: #0f172a;
+  border-bottom: 1px solid #1f2937;
+}
+
+/* Hero */
+body.dark-mode .hero {
+  background: linear-gradient(135deg, #0b1220, #111827, #1f2937);
+}
+
+/* Section Background */
+body.dark-mode .about-section,
+body.dark-mode .contact {
+  background-color: #0b1220;
+}
+
+/* Portfolio Section */
+body.dark-mode .portfolio {
+  background: #0f172a;
+}
+
+/* Card Style */
+body.dark-mode .portfolio-card,
+body.dark-mode .skill-item {
+  background: #161f2e;
+  border: 1px solid #243041;
+  color: #e6edf3;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Card Hover Effect */
+body.dark-mode .portfolio-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Text */
+body.dark-mode p {
+  color: #cbd5e1;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #f1f5f9;
+}
+
+/* Section Title */
+body.dark-mode .section-title {
+  color: #f8fafc;
+}
+
+/* Portfolio Description */
+body.dark-mode .portfolio-card__info p {
+  color: #94a3b8;
+}
+
+/* Form */
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+  background: #161f2e;
+  border: 1px solid #243041;
+  color: #f1f5f9;
+}
+
+body.dark-mode ::placeholder {
+  color: #64748b;
+}
+
+/* Footer */
+body.dark-mode .footer {
+  background: #0f172a;
+  border-top: 1px solid #1f2937;
+}
+
+/* Accent Color (brand identity) */
+body.dark-mode .highlight {
+  color: #ef4444;
+}
+
+/* Hire Me Button */
+body.dark-mode .btn-hire {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  box-shadow: 0 6px 15px rgba(239, 68, 68, 0.35);
+}
+
+body.dark-mode .btn-hire:hover {
+  transform: translateY(-2px);
+}
+
+/* Dark Mode Toggle Button */
+body.dark-mode .dark-btn {
+  background: #161f2e;
+  color: #f8fafc;
+  border: 1px solid #2c3a4f;
+}
+
+/* Social Icon */
+body.dark-mode .social-item {
+  color: #cbd5e1;
+}
+
+body.dark-mode .social-item:hover {
+  color: #ef4444;
+}
